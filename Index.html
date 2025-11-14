@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>fx-82MS Emulator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#111111">
+</head>
+
+<body>
+  <div class="device">
+    <div class="top-bar">
+      <div class="brand">CASIO</div>
+      <div class="model">fx-82MS</div>
+    </div>
+
+    <div class="display-area">
+      <div class="status-row">
+        <span id="power-indicator">ON</span>
+        <span id="mode-indicator">DEG</span>
+        <span id="shift-indicator"></span>
+        <span id="alpha-indicator"></span>
+        <span id="hyp-indicator"></span>
+      </div>
+      <div class="screen">
+        <div id="expr" class="expr"></div>
+        <div id="result" class="result">0</div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <!-- Row 1 -->
+      <div class="row">
+        <button class="key small yellow" data-fn="shift"><span class="top">SHIFT</span><span
+            class="main">SHIFT</span></button>
+        <button class="key small red" data-fn="alpha"><span class="top">ALPHA</span><span
+            class="main">ALPHA</span></button>
+        <button class="key small" data-fn="mode"><span class="top">MODE</span><span class="main">MODE</span></button>
+        <button class="key small" data-fn="on"><span class="top">ON</span><span class="main">ON</span></button>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="row">
+        <button class="key" data-fn="x2"><span class="top">x^2</span><span class="main">x²</span></button>
+        <button class="key" data-fn="x3"><span class="top">x^3</span><span class="main">x³</span></button>
+        <button class="key" data-fn="log"><span class="top">10^x</span><span class="main">log</span></button>
+        <button class="key" data-fn="ln"><span class="top">e^x</span><span class="main">ln</span></button>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="row">
+        <button class="key" data-fn="sin"><span class="top">sin⁻¹</span><span class="main">sin</span></button>
+        <button class="key" data-fn="cos"><span class="top">cos⁻¹</span><span class="main">cos</span></button>
+        <button class="key" data-fn="tan"><span class="top">tan⁻¹</span><span class="main">tan</span></button>
+        <button class="key" data-fn="hyp"><span class="top">HYP</span><span class="main">HYP</span></button>
+      </div>
+
+      <!-- Row 4 (functions and navigation) -->
+      <div class="row">
+        <button class="key" data-fn="x!"><span class="top">n!</span><span class="main">x!</span></button>
+        <button class="key" data-fn="recip"><span class="top">x^-1</span><span class="main">1/x</span></button>
+        <button class="key" data-fn="sqrt"><span class="top">^2</span><span class="main">√</span></button>
+        <button class="key red" data-fn="del"><span class="top">DEL</span><span class="main">DEL</span></button>
+      </div>
+
+      <!-- Row 5 (numeric pad and operators) -->
+      <div class="row">
+        <button class="key num" data-num="7">7</button>
+        <button class="key num" data-num="8">8</button>
+        <button class="key num" data-num="9">9</button>
+        <button class="key op" data-op="÷">÷</button>
+      </div>
+
+      <div class="row">
+        <button class="key num" data-num="4">4</button>
+        <button class="key num" data-num="5">5</button>
+        <button class="key num" data-num="6">6</button>
+        <button class="key op" data-op="×">×</button>
+      </div>
+
+      <div class="row">
+        <button class="key num" data-num="1">1</button>
+        <button class="key num" data-num="2">2</button>
+        <button class="key num" data-num="3">3</button>
+        <button class="key op" data-op="−">−</button>
+      </div>
+
+      <div class="row">
+        <button class="key num" data-num="0">0</button>
+        <button class="key num" data-num=".">.</button>
+        <button class="key" data-fn="ans">Ans</button>
+        <button class="key op" data-op="+">+</button>
+      </div>
+
+      <!-- Bottom rows: percent, pi, equals, AC, STO/RCL, M keys -->
+      <div class="row">
+        <button class="key" data-fn="%"><span class="main">%</span></button>
+        <button class="key" data-fn="pi"><span class="main">π</span></button>
+        <button class="key big equal" data-fn="equal">=</button>
+        <button class="key red" data-fn="ac"><span class="top">SHIFT+OFF</span><span class="main">AC</span></button>
+      </div>
+
+      <div class="row">
+        <button class="key" data-fn="sto"><span class="top">ALPHA</span><span class="main">STO</span></button>
+        <button class="key" data-fn="rcl"><span class="top">ALPHA</span><span class="main">RCL</span></button>
+        <button class="key" data-fn="m+">M+</button>
+        <button class="key" data-fn="m-">M-</button>
+      </div>
+
+      <div class="row">
+        <button class="key" data-fn="mr">MR</button>
+        <button class="key" data-fn="mc">MC</button>
+        <button class="key" data-fn="eng">ENG</button>
+        <button class="key" data-fn="drg">DRG</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sound -->
+  <audio id="click-sound"
+    src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5d576c6a06.mp3?filename=button-press-2-87786.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
